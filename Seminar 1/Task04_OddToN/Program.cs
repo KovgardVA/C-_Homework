@@ -12,11 +12,8 @@ if (N < 1)
 else
 {
     Console.Write($"А вот и все четные числа от 1 до {N}:");
-    for (int i = 1; i <= N; i++)
+    for (int i = 2; i <= N; i += 2)
     {
-        if(i % 2 == 0)
-        {
-            Console.Write($" {i}");
-        }
+        Console.Write($" {i}");
     }
 }
