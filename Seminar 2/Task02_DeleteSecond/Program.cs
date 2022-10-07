@@ -5,6 +5,6 @@ Console.WriteLine("Эта программа удалит вторую цифр�
 int randomNumber = new Random().Next(100,1000);
 Console.WriteLine("Ваше число: " + randomNumber);
 
-int number = (randomNumber / 100) * 10 + randomNumber % 10;
+int number = (randomNumber / 100) * 10 + randomNumber % 10; // Берем первую цифру (/ 100), домножаем на 10. Берем последнюю цифру (% 10) и прибавляем.
 
 Console.WriteLine($"Число без второй цифры: {number}");
