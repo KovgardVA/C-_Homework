@@ -8,18 +8,27 @@ int Prompt(string massage)
     return number;
 }
 
+bool ValidateDay(int day)
+{
+    if (day < 1 && day > 7)
+    {
+        Console.WriteLine("Ой! Вы ввели цифру не обозначающую день недели.");
+        return false;
+    }
+    return true;
+}
+
 Console.WriteLine("Давайте найдем выходные дни!");
 int weekend = Prompt("Введите число, обозночающее день недели (от 1 до 7): ");
 
-if (weekend > 0 & weekend < 6) // 1-5 - будние дни.
+if(ValidateDay(weekend))
 {
-    Console.WriteLine("Это будний день :(");
-}
-else if (weekend > 5 & weekend < 8) // 6-7 - выходные дни.
-{
-    Console.WriteLine("Ура! Это выходной :)");
-}
-else
-{
-    Console.WriteLine("Ой! Вы ввели цифру не обозначающую день недели.");
+    if (weekend > 0 && weekend < 6)
+    {
+        Console.WriteLine("Это будний день :(");
+    }
+    else
+    {
+        Console.WriteLine("Ура! Это выходной :)");
+    }
 }
