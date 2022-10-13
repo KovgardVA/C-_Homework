@@ -10,7 +10,7 @@ int Prompt(string message)
 
 bool ValidatePower(int number)
 {
-    if (number < 1)
+    if (number < 0)
     {
         Console.WriteLine("Степень должна быть натуральной!");
         return false;
@@ -21,7 +21,7 @@ bool ValidatePower(int number)
 int PowerOfNumber (int number, int power)
 {
     int result = 1;
-    for (int i = 1; i <= power; i ++)
+    for (int i = 0; i < power; i ++)
     {
         result *= number;
     }
@@ -29,5 +29,5 @@ int PowerOfNumber (int number, int power)
 }
 
 int firstNumber = Prompt("Введите число для возведения в степень: ");
-int secondNumber = Prompt("Введите натуральную степень (больше нуля): ");
+int secondNumber = Prompt("Введите натуральную степень: ");
 if (ValidatePower(secondNumber)) Console.WriteLine($"Число {firstNumber} в степени {secondNumber} равно {PowerOfNumber(firstNumber, secondNumber)}!");
