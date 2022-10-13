@@ -17,17 +17,23 @@ int Module(int moduleNumber)
     return moduleNumber;
 }
 
+bool ValidateNumber(int number)
+{
+    if (number < 100)
+    {
+        Console.WriteLine("В этом числе нет третьей цифры!");
+        return false;
+    }
+    return true;
+}
+
 Console.WriteLine("Давайте найдем третью цифру введенного числа!");
 int number = Prompt("Введите число: ");
 
 int thirdNumber = 0;
 number = Module(number); // Трехзначные числа могут быть не только положительными.
 
-if (number < 100)
-{
-    Console.WriteLine("В этом числе нет третьей цифры!");
-}
-else
+if (ValidateNumber(number))
 {
     while (number >= 1000)
     {
