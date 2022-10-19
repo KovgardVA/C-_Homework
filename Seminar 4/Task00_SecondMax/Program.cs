@@ -17,28 +17,24 @@ void PrintArray(int[] col)
 
 int FindSecondMax(int[] array)
 {
-    int max = 0,
-        secondMax = 0;
-        
-    if (array[0] > array[1])
-    {
-        max = array[0];
-        secondMax = array[1];
-    }
-    else
-    {
-        max = array[1];
+    int max = array[0],
         secondMax = array[0];
-    }
 
-    for (int index = 2; index < array.Length; index++)
+    for (int index = 0; index < array.Length; index++)
     {
         if (array[index] > max)
         {
             secondMax = max;
             max = array[index];
         }
-        else if (array[index] > secondMax)
+        if (secondMax == max)
+        {
+            if (i < array.Length - 1)
+            {
+                secondMax = array[i + 1];
+            }
+        }
+        if (array[index] > secondMax & array[i] != max)
         {
             secondMax = array[index];
         }
