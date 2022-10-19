@@ -29,12 +29,12 @@ int FindSecondMax(int[] array)
         }
         if (secondMax == max)
         {
-            if (i < array.Length - 1)
+            if (index < array.Length - 1)
             {
-                secondMax = array[i + 1];
+                secondMax = array[index + 1];
             }
         }
-        if (array[index] > secondMax & array[i] != max)
+        if (array[index] > secondMax & array[index] != max)
         {
             secondMax = array[index];
         }
