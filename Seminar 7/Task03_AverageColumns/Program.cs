@@ -24,24 +24,25 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[] AverageColumns(int[,] matrix)
+double[] AverageColumns(int[,] matrix)
 {
-    int[] array = new int[matrix.GetLength(1)];
+    double[] array = new double[matrix.GetLength(1)];
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             array[j] += matrix[i, j];
         }
+        array[j] /= matrix.GetLength(0);
     }
     return array;
 }
 
-void PrintArray(int[] array)
+void PrintArray(double[] array)
 {
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{array[i]}\t");
+        Console.Write($"{array[i]:f1}\t");
     }
     Console.WriteLine();
 }
