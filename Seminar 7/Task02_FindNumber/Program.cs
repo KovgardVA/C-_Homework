@@ -34,16 +34,26 @@ void PrintArray(double[,] array)
     }
 }
 
-double FindNumber(double[,] array, int lineNumber, int columnNumber)
+// double FindNumber(double[,] array, int lineNumber, int columnNumber)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             if (i == lineNumber && j == columnNumber) return array[i, j];
+//         }
+//     }
+//     return -1;
+// }
+
+bool ValidateIndex(double[,] array, int lineIndex, int columnIndex)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            if (i == lineNumber && j == columnNumber) return array[i, j];
-        }
-    }
-    return -1;
+    if (lineIndex < array.GetLength(0)
+    && lineIndex > -1
+    && columnIndex < array.GetLength(0)
+    && lineIndex > -1)
+        return true;
+    return false;
 }
 
 double[,] myArray = CreateArray(3, 4);
@@ -54,6 +64,10 @@ int line = Prompt("Введите индекс строки: ");
 int column = Prompt("Введите индекс столбца: ");
 Console.WriteLine();
 
-double numberToFind = FindNumber(myArray, line, column);
-if (numberToFind == -1) Console.WriteLine ("Элемента с таким индексом в матрице нет!");
-else Console.WriteLine ($"Под индексом [{line}, {column}] находится элемент {numberToFind:f1}");
+if (ValidateIndex(myArray, line, column))
+    Console.WriteLine ($"Под индексом [{line}, {column}] находится элемент {myArray[line, column]:f1}");
+else Console.WriteLine ("Элемента с таким индексом в матрице нет!");
+
+// double numberToFind = FindNumber(myArray, line, column);
+// if (numberToFind == -1) Console.WriteLine ("Элемента с таким индексом в матрице нет!");
+// else Console.WriteLine ($"Под индексом [{line}, {column}] находится элемент {numberToFind:f1}");
