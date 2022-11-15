@@ -1,9 +1,6 @@
 ﻿// Задайте прямоугольный двумерный массив. Напишите программу,
 // которая будет находить строку с наименьшей суммой элементов.
 
-const int max = 1;
-const int min = -1;
-
 int[,] CreateMatrix(int lenRow, int lenColumn)
 {
     int[,] matrix = new int[lenRow, lenColumn];
@@ -60,6 +57,6 @@ int FindIndexMaxMin (int[] array, int fl)
 int[,] myMatrix = CreateMatrix(3, 4);
 PrintMatrix(myMatrix);
 int[] rowElementsSum = SumInRows(myMatrix);
-int indexOfMinSum = FindIndexMaxMin(rowElementsSum, min);
+int indexOfMinSum = FindIndexMaxMin(rowElementsSum, -1);
 
 Console.WriteLine($"\nНаименьшая сумма элементов находится в строке с номером: {indexOfMinSum + 1} , и она равна {rowElementsSum[indexOfMinSum]}");

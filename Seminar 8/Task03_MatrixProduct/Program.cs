@@ -50,7 +50,7 @@ int[,] MatrixProduct(int[,] matrixOne, int[,] matrixTwo)
 }
 
 int[,] firstMatrix = CreateMatrix(3, 4);
-int[,] secondMatrix = CreateMatrix(4, 3);
+int[,] secondMatrix = CreateMatrix(4, 2);
 
 Console.WriteLine("Первая матрица:");
 PrintMatrix(firstMatrix);
